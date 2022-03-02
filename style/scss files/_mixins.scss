@@ -1,0 +1,28 @@
+@mixin sectionBtn {
+  position: absolute;
+  top: 17%;
+  right: 150%;
+  width: 7em;
+  color: $text-color-dark;
+  background-color: var(--listLight, $main-color-dark);
+  border-radius: 30px;
+  text-align: center;
+  padding: 0.5em 0;
+  transform: translateX(0);
+  text-transform: uppercase;
+  font-family: $small-text;
+  font-weight: 500;
+  animation: moving 0.5s;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin theme($light) {
+  @if $light == dark {
+    @content;
+  }
+}

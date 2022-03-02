@@ -1,0 +1,106 @@
+.portfolio {
+  width: 90%;
+  // display: flex;
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 7em 0 0;
+  color: $text-color-dark;
+  margin: 0 auto;
+  .title {
+    &::after {
+      content: "works";
+    }
+  }
+  ul {
+    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 10 0%;
+    margin-bottom: 2em;
+    li {
+      font-family: $small-text;
+      text-transform: uppercase;
+      padding: 0.5em 0.8em;
+      cursor: pointer;
+      user-select: none;
+      &:hover {
+        color: $main-color-dark;
+      }
+    }
+    .active-li {
+      color: $text-color-dark;
+      background-color: var(--activeLiLight, $main-color-dark);
+      &:hover {
+        color: $text-color-dark;
+      }
+    }
+  }
+  .projects {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(21em, 1fr));
+    gap: 2em;
+    margin-bottom: 6em;
+
+    @include breakpoints(mobile) {
+      width: 95%;
+    }
+    @include breakpoints(mobile-m) {
+      width: 95%;
+      grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    }
+    @include breakpoints(small) {
+      width: 95%;
+      grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+    }
+    .project {
+      border-radius: 10px;
+      width: 100%;
+      position: relative;
+      user-select: none;
+      animation: moving3-1 1.5s;
+      @keyframes moving3-1 {
+        0% {
+          position: relative;
+          left: -20em;
+        }
+        100% {
+          position: relative;
+          left: 0;
+        }
+      }
+      &:hover {
+        width: 100%;
+        background-color: var(--hoverGreen, $main-color-dark);
+        z-index: 2;
+        &::after {
+          content: "view project";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: $text-color-dark;
+          font-family: $small-text;
+          font-size: 1.2em;
+          font-weight: 500;
+          line-height: 1.5;
+          text-transform: capitalize;
+        }
+      }
+      a {
+        img {
+          border-radius: 10px;
+          width: 100%;
+          height: 100%;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}

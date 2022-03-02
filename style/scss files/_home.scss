@@ -1,0 +1,147 @@
+.first-section {
+  background-image: url("../../imgs/1-section-01.svg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: absolute;
+  // top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  // display: none;
+  align-items: center;
+  justify-content: space-around;
+
+  @include breakpoints(mobile) {
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    background-image: none;
+  }
+  @include breakpoints(small) {
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    background-image: none;
+  }
+
+  #myPic {
+    width: 30%;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px $dark-bg;
+    background-color: black;
+    animation: moving1-1 2s;
+    @keyframes moving1-1 {
+      0% {
+        position: relative;
+        top: -50em;
+      }
+      100% {
+        position: relative;
+        top: 0;
+      }
+    }
+    @include breakpoints(mobile) {
+      width: 15em;
+      bottom: 1.5em;
+      position: relative;
+    }
+    @include breakpoints(small) {
+      width: 15em;
+      bottom: 1.5em;
+      position: relative;
+    }
+    @include breakpoints(large) {
+      max-width: 50%;
+    }
+  }
+  .info {
+    width: 50%;
+    animation: moving1 1s;
+    @keyframes moving1 {
+      0% {
+        position: relative;
+        top: -50em;
+      }
+      100% {
+        position: relative;
+        top: 0;
+      }
+    }
+    @include breakpoints(mobile) {
+      width: 100%;
+      padding: 0.5em 1em;
+      text-align: center;
+    }
+    @include breakpoints(small) {
+      width: 100%;
+      padding: 0.5em 1em;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      line-height: 1.2;
+      @include breakpoints(mobile) {
+        font-size: 1.5em;
+        line-height: 1.5em;
+      }
+      @include breakpoints(small) {
+        font-size: 2em;
+        line-height: 1.5em;
+      }
+      &:first-of-type {
+        position: relative;
+        color: $main-color-dark;
+        @include breakpoints(mobile) {
+        }
+        img {
+          width: 1em;
+          margin: 0.2em 0;
+        }
+      }
+      &:last-of-type {
+        color: $text-color-dark;
+        margin-bottom: 0.5em;
+      }
+    }
+    p {
+      color: $text-color-dark;
+      width: 80%;
+      margin-bottom: 1em;
+      font-weight: 400;
+      line-height: 2;
+      @include breakpoints(mobile) {
+        width: 100%;
+        font-size: 0.9em;
+      }
+      @include breakpoints(mobile-m) {
+        width: 70%;
+        margin: 0 auto;
+      }
+      @include breakpoints(small) {
+        width: 58%;
+        font-size: 0.9em;
+        margin: 0 auto;
+      }
+    }
+    h5 {
+      color: $main-color-dark;
+      font-family: $small-text;
+      margin-bottom: 1.5em;
+      font-size: 1.2em;
+      font-weight: 500;
+      opacity: 0.8;
+      @include breakpoints(mobile) {
+        font-size: 0.8em;
+      }
+    }
+    button {
+      width: 15em;
+      height: 3.5em;
+      img {
+        width: 3.5em;
+      }
+    }
+  }
+}

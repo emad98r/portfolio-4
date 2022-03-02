@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: $dark-bg;
+  position: relative;
+}
+
+.list {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  height: 50vh;
+  user-select: none;
+  animation: moving-main 1s ease-in;
+  @keyframes moving-main {
+    0% {
+      right: -5em;
+    }
+    100% {
+      right: 0;
+    }
+  }
+  .active-btn {
+    background-color: var(--hoverLightBtn, $main-color-dark);
+  }
+  .active-btn-light {
+    background-color: $main-color-light;
+  }
+  @include breakpoints(mobile) {
+    bottom: 0;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    left: 0;
+    flex-direction: row;
+    transform: none;
+    justify-content: space-around;
+    background-color: $gray-color-dark;
+  }
+  @include breakpoints(small) {
+    bottom: 0;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    left: 0;
+    flex-direction: row;
+    transform: none;
+    justify-content: space-around;
+    background-color: $gray-color-dark;
+  }
+  a {
+    margin: 0.5em 0;
+    width: 3em;
+    padding: 0.8em;
+    border-radius: 50%;
+    background-color: $gray-color-dark;
+    position: relative;
+    cursor: pointer;
+  }
+}
+#homeBtn:hover {
+  background-color: var(--hoverLightBtn, $main-color-dark);
+  &::before {
+    content: "home";
+    @include sectionBtn;
+  }
+}
+#aboutBtn:hover {
+  background-color: var(--hoverLightBtn, $main-color-dark);
+  &::before {
+    content: "about";
+    @include sectionBtn;
+  }
+}
+#portfolioBtn:hover {
+  background-color: var(--hoverLightBtn, $main-color-dark);
+  &::before {
+    content: "portfolio";
+    @include sectionBtn;
+  }
+}
+#contactBtn:hover {
+  background-color: var(--hoverLightBtn, $main-color-dark);
+  &::before {
+    content: "contact";
+    @include sectionBtn;
+  }
+}
+#serviceBtn:hover {
+  background-color: var(--hoverLightBtn, $main-color-dark);
+  &::before {
+    content: "services";
+    @include sectionBtn;
+  }
+}
+@keyframes moving {
+  0% {
+    transform: translateX(5em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#lightMode,
+#darkMode {
+  width: 3em;
+  margin: 0.5em 0;
+  transform: translate(-50%, -50%);
+  padding: 0.5em;
+  background-color: $gray-color-dark;
+  border-radius: 50%;
+  position: fixed;
+  top: 8%;
+  right: 0;
+  cursor: pointer;
+  z-index: 5;
+  &:hover {
+    background-color: gray;
+  }
+  @include breakpoints(mobile) {
+    top: 4%;
+  }
+}
+#darkMode {
+  display: none;
+}
+h1 {
+  font-family: $big-text;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+p {
+  font-family: $small-text;
+  line-height: 2.5;
+  font-weight: 500;
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  width: 12em;
+  height: 3.5em;
+  border: none;
+  font-family: $big-text;
+  text-transform: uppercase;
+  border-radius: 30px;
+  padding: 0 0 0 2em;
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+  // color: $gray-color-light;
+  color: var(--btnColor, $gray-color-light);
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $main-color-dark;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 3.5em;
+    background-color: var(--darkColor, $main-color-dark);
+    position: absolute;
+    right: -110%;
+    top: 0;
+    border-radius: 30px;
+    transition: 0.5s;
+  }
+  &:hover {
+    color: var(--textBtnLight, $text-color-dark);
+    &::after {
+      right: 0;
+      z-index: -1;
+    }
+  }
+  img {
+    width: 3.5em;
+    background-color: $main-color-dark;
+    border-radius: 50%;
+    padding: 0.5em;
+  }
+  a {
+    width: 15em;
+    height: 3.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.7s;
+  }
+  @include breakpoints(mobile) {
+    margin: 0 auto;
+  }
+  @include breakpoints(small) {
+    margin: 0 auto;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color-dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+span {
+  &::selection {
+    background-color: $main-color-dark;
+    color: $text-color-dark;
+  }
+}
+
+.light-mode {
+  color: $main-color-light;
+}
+
+.light-title {
+  color: $text-color-light;
+}
+.light-title-span {
+  color: $main-color-light;
+}
+
+.active-btn-light2 {
+  background-color: $main-color-light;
+}
