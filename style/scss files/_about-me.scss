@@ -1,5 +1,4 @@
-.section-2,
-.open-section-2 {
+.section-2 {
   width: 90%;
   color: $text-color-dark;
   display: none;
@@ -99,9 +98,9 @@
               margin: 1em 0;
               font-family: $small-text;
               text-transform: capitalize;
-              color: darken($gray-color-light, 20);
+              color: $main-color-dark;
               span {
-                color: $text-color-dark;
+                color: $light-bg;
                 margin-left: 0.5em;
               }
             }
@@ -224,9 +223,6 @@
         position: relative;
         @include flex;
         flex-direction: column;
-        &:hover .small-bar {
-          transform: rotate(180deg);
-        }
         h4 {
           font-size: 1.2em;
           color: $text-color-dark;
@@ -241,16 +237,34 @@
           background-color: $gray-color-dark;
           border-radius: 50%;
           @include flex;
+          opacity: 0.5;
+          animation: moving2-3 2s ease-in-out infinite normal;
+          @keyframes moving2-3 {
+            0% {
+              transform: rotate(0);
+            }
+            100% {
+              transform: rotate(180deg);
+            }
+          }
           .small-bar {
             width: 9em;
             height: 9em;
             border-radius: 50%;
             @include flex;
+            animation: moving2-4 2s ease-in-out infinite normal;
             border-bottom: 1em solid $main-color-dark;
-            border-top: 1em solid transparent;
-            border-left: 1em solid $main-color-dark;
-            border-right: 1em solid $main-color-dark;
-            transition: 0.5s;
+            border-top: 1em solid gray;
+            border-left: none;
+            border-right: none;
+            @keyframes moving2-4 {
+              0% {
+                transform: rotate(0);
+              }
+              100% {
+                transform: rotate(180deg);
+              }
+            }
           }
         }
         span {
@@ -305,6 +319,7 @@
         padding: 0.5em;
         border-radius: 50%;
         margin-right: 1.5em;
+        z-index: 2;
       }
       .info {
         display: flex;
@@ -355,9 +370,9 @@
           position: absolute;
           left: -2.8em;
           top: 0;
-          background-color: $main-color-dark;
-          z-index: -1;
-          opacity: 0.2;
+          background-color: gray;
+          z-index: 1;
+          opacity: 0.5;
         }
       }
     }
@@ -414,11 +429,9 @@
   }
   @include breakpoints(mobile) {
     font-size: 2.5em;
+    text-align: center;
     &::after {
       font-size: 1.5em;
     }
   }
-}
-.open-section-2 {
-  display: block;
 }

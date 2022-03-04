@@ -27,13 +27,11 @@
       padding: 0.5em 0.8em;
       cursor: pointer;
       user-select: none;
-      &:hover {
-        color: $main-color-dark;
-      }
+      color: var(--hoverGreen, white);
     }
     .active-li {
-      color: $text-color-dark;
-      background-color: var(--activeLiLight, $main-color-dark);
+      color: $light-bg !important;
+      background-color: gray !important;
       &:hover {
         color: $text-color-dark;
       }

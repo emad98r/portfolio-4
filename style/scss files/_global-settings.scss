@@ -32,11 +32,9 @@ body {
     }
   }
   .active-btn {
-    background-color: var(--hoverLightBtn, $main-color-dark);
+    background-color: #00323a;
   }
-  .active-btn-light {
-    background-color: $main-color-light;
-  }
+
   @include breakpoints(mobile) {
     bottom: 0;
     top: auto;
@@ -66,7 +64,7 @@ body {
     width: 3em;
     padding: 0.8em;
     border-radius: 50%;
-    background-color: $gray-color-dark;
+    background-color: #848484;
     position: relative;
     cursor: pointer;
   }
@@ -104,6 +102,14 @@ body {
   &::before {
     content: "services";
     @include sectionBtn;
+    @include breakpoints(mobile) {
+      top: -3em;
+      left: -3.5em;
+    }
+    @include breakpoints(small) {
+      top: -3em;
+      left: -3.5em;
+    }
   }
 }
 @keyframes moving {

@@ -13,16 +13,19 @@
   font-family: $small-text;
   font-weight: 500;
   animation: moving 0.5s;
+  @include breakpoints(mobile) {
+    top: -3em;
+    left: 0;
+  }
+  @include breakpoints(small) {
+    top: -3em;
+    right: -2em;
+    left: a;
+  }
 }
 
 @mixin flex {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-@mixin theme($light) {
-  @if $light == dark {
-    @content;
-  }
 }
