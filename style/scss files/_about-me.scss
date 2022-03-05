@@ -238,15 +238,6 @@
           border-radius: 50%;
           @include flex;
           opacity: 0.5;
-          animation: moving2-3 2s ease-in-out infinite normal;
-          @keyframes moving2-3 {
-            0% {
-              transform: rotate(0);
-            }
-            100% {
-              transform: rotate(180deg);
-            }
-          }
           .small-bar {
             width: 9em;
             height: 9em;
@@ -262,7 +253,7 @@
                 transform: rotate(0);
               }
               100% {
-                transform: rotate(180deg);
+                transform: rotate(360deg);
               }
             }
           }
