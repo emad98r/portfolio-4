@@ -60,15 +60,22 @@
       width: 100%;
       position: relative;
       user-select: none;
-      animation: moving3-1 1.5s;
+      animation: moving3-1 1s;
+
       @keyframes moving3-1 {
         0% {
-          position: relative;
-          left: -20em;
+          transform: perspective(400px) rotateX(90deg);
+          opacity: 0;
+        }
+        40% {
+          transform: perspective(400px) rotateX(-10deg);
+        }
+        70% {
+          transform: perspective(400px) rotateX(10deg);
         }
         100% {
-          position: relative;
-          left: 0;
+          transform: perspective(400px) rotateX(0deg);
+          opacity: 1;
         }
       }
       &:hover {
