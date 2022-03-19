@@ -258,3 +258,11 @@ span {
 .active-btn-light2 {
   background-color: $main-color-light;
 }
+
+// translate button
+#google_translate_element {
+  position: fixed;
+  bottom: 0;
+  right: 2%;
+  z-index: 99;
+}
