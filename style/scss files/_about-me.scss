@@ -38,12 +38,21 @@
 
       .left-side {
         width: 50%;
-        // display: flex;
+        display: none;
         flex-direction: column;
         align-items: flex-start;
         padding-left: 12em;
-        transform: translateX(-50em);
-        transition: 1s;
+        animation: moving-to-left 1s ease-in;
+
+        @keyframes moving-to-left {
+          0% {
+            transform: translateX(-50em);
+          }
+
+          100% {
+            transform: translateX(0);
+          }
+        }
 
         @include breakpoints(mobile) {
           padding: 0;
@@ -126,9 +135,18 @@
 
       .right-side {
         width: 50%;
-        // display: flex;
-        transition: 1s;
-        transform: translateX(50em);
+        display: none;
+        animation: moving-to-right 1s ease-in;
+
+        @keyframes moving-to-right {
+          0% {
+            transform: translateX(50em);
+          }
+
+          100% {
+            transform: translateX(0);
+          }
+        }
 
         @include breakpoints(mobile) {
           width: 100%;

@@ -549,8 +549,8 @@ categoryListBtns[7].addEventListener("click", () => {
 
 window.addEventListener("scroll", () => {
   if (window.scrollY >= document.querySelector(".section-2").offsetTop - 500) {
-    document.querySelector(".left-side").style.cssText = `transform: translateX(0); display:flex;`
-    document.querySelector(".right-side").style.cssText = `transform: translateX(0); display:flex;`
+    document.querySelector(".left-side").style.cssText = ` display:flex;`
+    document.querySelector(".right-side").style.cssText = ` display:flex;`
   }
 })
 

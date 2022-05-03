@@ -23,9 +23,9 @@ body {
   transform: translateX(27em);
   display: none;
 
-  @include breakpoints(mobile) {
-    top: 20em;
-  }
+  // @include breakpoints(mobile) {
+  //   top: 20em;
+  // }
 
   @include breakpoints(small) {
     top: 23em;
