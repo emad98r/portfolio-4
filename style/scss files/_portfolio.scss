@@ -1,18 +1,19 @@
 .portfolio {
   width: 90%;
-  // display: flex;
-  display: none;
+  display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   padding: 7em 0 0;
   color: $text-color-dark;
   margin: 0 auto;
+
   .title {
     &::after {
       content: "works";
     }
   }
+
   ul {
     display: grid;
     display: flex;
@@ -21,6 +22,7 @@
     flex-wrap: wrap;
     width: 10 0%;
     margin-bottom: 2em;
+
     li {
       font-family: $small-text;
       text-transform: uppercase;
@@ -29,14 +31,17 @@
       user-select: none;
       color: var(--hoverGreen, white);
     }
+
     .active-li {
       color: $light-bg !important;
       background-color: gray !important;
+
       &:hover {
         color: $text-color-dark;
       }
     }
   }
+
   .projects {
     width: 80%;
     display: grid;
@@ -47,41 +52,31 @@
     @include breakpoints(mobile) {
       width: 95%;
     }
+
     @include breakpoints(mobile-m) {
       width: 95%;
       grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
     }
+
     @include breakpoints(small) {
       width: 95%;
       grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
     }
+
     .project {
       border-radius: 10px;
       width: 100%;
       position: relative;
       user-select: none;
-      animation: moving3-1 1s;
+      transform: scale(0);
+      transition: 1s;
 
-      @keyframes moving3-1 {
-        0% {
-          transform: perspective(400px) rotateX(90deg);
-          opacity: 0;
-        }
-        40% {
-          transform: perspective(400px) rotateX(-10deg);
-        }
-        70% {
-          transform: perspective(400px) rotateX(10deg);
-        }
-        100% {
-          transform: perspective(400px) rotateX(0deg);
-          opacity: 1;
-        }
-      }
+
       &:hover {
         width: 100%;
         background-color: var(--hoverGreen, $main-color-dark);
         z-index: 2;
+
         &::after {
           content: "view project";
           position: absolute;
@@ -96,11 +91,13 @@
           text-transform: capitalize;
         }
       }
+
       a {
         img {
           border-radius: 10px;
           width: 100%;
           height: 100%;
+
           &:hover {
             opacity: 0.5;
           }

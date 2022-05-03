@@ -1,27 +1,19 @@
 .section-2 {
   width: 90%;
   color: $text-color-dark;
-  display: none;
+  display: block;
   margin: 0 auto;
   position: relative;
   transition: all 1s;
-  animation: moving2 1s;
-  @keyframes moving2 {
-    0% {
-      top: 50em;
-      opacity: 0;
-    }
-    100% {
-      top: 0;
-      opacity: 1;
-    }
-  }
+
   @include breakpoints(mobile) {
     padding: 0 1em;
   }
+
   @include breakpoints(small) {
     padding: 0 1em;
   }
+
   .p-info {
     display: flex;
     flex-direction: column;
@@ -33,72 +25,92 @@
       width: 100%;
       display: flex;
       flex-direction: row;
+
       @include breakpoints(mobile) {
         flex-direction: column;
       }
+
       @include breakpoints(small) {
         flex-direction: column;
       }
 
       gap: 0 4em;
+
       .left-side {
         width: 50%;
-        display: flex;
+        // display: flex;
         flex-direction: column;
         align-items: flex-start;
         padding-left: 12em;
+        transform: translateX(-50em);
+        transition: 1s;
+
         @include breakpoints(mobile) {
           padding: 0;
           width: 100%;
         }
+
         @include breakpoints(small) {
           padding: 0;
           width: 100%;
         }
+
         h1 {
           margin-bottom: 1.5em;
+
           @include breakpoints(mobile) {
             margin-bottom: 1em;
             font-size: 1.1em;
           }
         }
+
         .list-info {
           display: flex;
           justify-content: space-between;
           width: 100%;
           margin-bottom: 1em;
+
           @include breakpoints(mobile) {
             flex-direction: column;
           }
+
           @include breakpoints(mobile-m) {
             flex-direction: row;
           }
+
           @include breakpoints(medium) {
             flex-direction: column;
           }
+
           ul {
             @include breakpoints(mobile) {
               border-bottom: 1px solid $gray-color-dark;
             }
+
             @include breakpoints(medium) {
               border-bottom: 1px solid $gray-color-dark;
             }
+
             &:nth-of-type(2) {
               @include breakpoints(mobile) {
                 margin-bottom: 2em;
               }
+
               @include breakpoints(medium) {
                 margin-bottom: 2em;
               }
+
               li:nth-of-type(3) {
                 text-transform: lowercase;
               }
             }
+
             li {
               margin: 1em 0;
               font-family: $small-text;
               text-transform: capitalize;
               color: $main-color-dark;
+
               span {
                 color: $light-bg;
                 margin-left: 0.5em;
@@ -106,27 +118,35 @@
             }
           }
         }
+
         button {
           width: 15em;
         }
       }
+
       .right-side {
         width: 50%;
-        display: flex;
+        // display: flex;
+        transition: 1s;
+        transform: translateX(50em);
+
         @include breakpoints(mobile) {
           width: 100%;
           margin: 2em 0 6em;
         }
+
         @include breakpoints(small) {
           width: 50%;
           margin: 2em auto;
         }
+
         @include breakpoints(medium) {
           width: 50%;
           margin: 2em auto;
           flex-direction: column;
           align-items: center;
         }
+
         .card {
           width: 35%;
           height: 50%;
@@ -138,33 +158,40 @@
           font-family: $small-text;
           padding: 0.5em 0 0 1.5em;
           margin: 0 1em;
+
           @include breakpoints(mobile) {
             width: 50%;
             height: auto;
             margin: 0;
           }
+
           @include breakpoints(small) {
             width: 50%;
             height: auto;
             margin: 0;
           }
+
           h1 {
             font-size: 3em;
             color: $main-color-dark;
+
             @include breakpoints(mobile) {
               font-size: 2.5em;
             }
+
             span {
               font-weight: 400;
               font-size: 0.7em;
             }
           }
+
           h2 {
             font-weight: 500;
             font-size: 1em;
             text-transform: uppercase;
             position: relative;
             padding: 0 2em;
+
             &::before {
               content: "";
               width: 1.5em;
@@ -175,10 +202,12 @@
               top: 50%;
               left: 0;
             }
+
             @include breakpoints(mobile) {
               padding: 0;
               margin-bottom: 0.8em;
             }
+
             @include breakpoints(small) {
               padding: 0;
               margin-bottom: 0.8em;
@@ -196,82 +225,87 @@
     width: 100%;
     @include flex;
     flex-direction: column;
+
     h1 {
       margin-bottom: 2em;
       font-size: 2.5em;
+
       @include breakpoints(mobile) {
         font-size: 1.5em;
       }
     }
+
     .skills {
       width: 80%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(27em, 1fr));
+      gap: 2em;
+      margin-bottom: 8em;
+
       @include breakpoints(mobile) {
         width: 100%;
-        grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
       }
-      @include breakpoints(mobile-m) {
-        width: 100%;
-        grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
-      }
+
       @include breakpoints(small) {
         width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
       }
+
+      @include breakpoints(medium) {
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+      }
+
       .skill {
-        padding-bottom: 4em;
-        position: relative;
-        @include flex;
-        flex-direction: column;
         h4 {
-          font-size: 1.2em;
           color: $text-color-dark;
           font-family: $small-text;
-          font-weight: 400;
-          text-transform: uppercase;
-          margin-top: 1.5em;
+          font-weight: 500;
+          text-transform: capitalize;
+          margin-bottom: 1em;
+          font-size: 1.3em;
         }
+
         .big-bar {
-          width: 9em;
-          height: 9em;
+          width: 100%;
+          height: 1.5em;
           background-color: $gray-color-dark;
-          border-radius: 50%;
-          @include flex;
-          opacity: 0.5;
-          .small-bar {
-            width: 9em;
-            height: 9em;
-            border-radius: 50%;
-            @include flex;
-            animation: moving2-4 2s ease-in-out infinite normal;
-            border-bottom: 1em solid $main-color-dark;
-            border-top: 1em solid gray;
-            border-left: none;
-            border-right: none;
-            @keyframes moving2-4 {
-              0% {
-                transform: rotate(0);
-              }
-              100% {
-                transform: rotate(360deg);
-              }
+
+          span {
+            display: block;
+            height: 100%;
+            background-color: $main-color-dark;
+            position: relative;
+            transition: 2s;
+            width: 0;
+
+            &::after {
+              content: attr(data-progress);
+              position: absolute;
+              top: -3em;
+              right: 0;
+              background-color: #848484;
+              color: white;
+              width: 2.5em;
+              padding: .2em;
+              border-radius: 3px;
+              text-align: center;
+              font-family: $big-text;
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: -18px;
+              right: 14px;
+              border-width: 8px;
+              border-color: #848484 transparent transparent transparent;
+              border-style: solid;
             }
           }
         }
-        span {
-          display: block;
-          width: 5em;
-          height: 5em;
-          background-color: $dark-bg;
-          border-radius: 50%;
-          @include flex;
-          font-family: $big-text;
-          font-size: 1.5em;
-          position: absolute;
-          top: 27%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
+
       }
     }
   }
@@ -284,26 +318,32 @@
     grid-template-columns: repeat(auto-fit, minmax(35em, 1fr));
     margin: 0 auto 2em;
     gap: 2em 0;
+
     @include breakpoints(mobile) {
       width: 100%;
       margin: 0 0 2em;
       grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
     }
+
     @include breakpoints(mobile-m) {
       grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
     }
+
     @include breakpoints(small) {
       grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
     }
+
     @include breakpoints(medium) {
       grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
     }
+
     section {
       width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       align-items: flex-start;
+
       img {
         width: 2.5em;
         background-color: $main-color-dark;
@@ -311,7 +351,11 @@
         border-radius: 50%;
         margin-right: 1.5em;
         z-index: 2;
+        transition: 1s;
+        position: relative;
+        top: 100%;
       }
+
       .info {
         display: flex;
         flex-direction: column;
@@ -319,10 +363,12 @@
         justify-content: center;
         text-transform: uppercase;
         position: relative;
+
         @include breakpoints(mobile) {
           width: 100%;
         }
-        > span {
+
+        >span {
           margin-bottom: 0.5em;
           background-color: $gray-color-dark;
           color: $text-color-dark;
@@ -331,29 +377,35 @@
           font-family: $small-text;
           font-size: 0.8em;
         }
+
         h1 {
           font-size: 1.2em;
           margin-bottom: 0.5em;
           font-weight: 500;
           color: $main-color-dark;
+
           @include breakpoints(mobile) {
             font-size: 1em;
           }
+
           span {
             color: $text-color-dark;
           }
         }
+
         p {
           line-height: 1.5;
           font-size: 0.9em;
           width: 50ch;
           font-weight: 400;
           color: lighten($gray-color-dark, 40);
+
           @include breakpoints(mobile) {
             width: 100%;
             font-size: 0.8em;
           }
         }
+
         &::before {
           content: "";
           width: 2px;
@@ -368,18 +420,22 @@
       }
     }
   }
+
   .trining-courses {
     grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
 
     @include breakpoints(mobile) {
       margin-bottom: 6em;
     }
+
     @include breakpoints(small) {
       margin-bottom: 6em;
     }
+
     @include breakpoints(medium) {
       margin-bottom: 6em;
     }
+
     section {
       @include breakpoints(mobile-m) {
         width: 70%;
@@ -396,16 +452,20 @@
   font-weight: 800;
   transition: 0.5s;
   cursor: no-drop;
+
   &:hover {
     color: transparent !important;
   }
+
   &:hover span {
     color: transparent !important;
   }
+
   span {
     color: $main-color-dark;
     transition: 0.5s;
   }
+
   &::after {
     content: "Resume";
     font-size: 1.5em;
@@ -418,9 +478,11 @@
     opacity: 0.2;
     font-size: 2em;
   }
+
   @include breakpoints(mobile) {
     font-size: 2.5em;
     text-align: center;
+
     &::after {
       font-size: 1.5em;
     }

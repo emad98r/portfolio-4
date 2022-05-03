@@ -3,12 +3,92 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background-color: $dark-bg;
   position: relative;
+  overflow-x: hidden;
+}
+
+.hi {
+  position: fixed;
+  z-index: 50;
+  top: 33em;
+  right: -3em;
+  transition: 1s;
+  transform: translateX(27em);
+  display: none;
+
+  @include breakpoints(mobile) {
+    top: 20em;
+  }
+
+  @include breakpoints(small) {
+    top: 23em;
+  }
+
+  &::after {
+    content: var(--message, "hi can i show you my latest projects I have done ");
+    position: absolute;
+    top: 50%;
+    left: -21em;
+    background-color: whitesmoke;
+    width: 17em;
+    padding: 1em 1.5em;
+    border-radius: 10px;
+    font-family: $small-text;
+    text-transform: capitalize;
+    box-shadow: 1px 3px 14px #757575;
+
+    @include breakpoints(mobile) {
+      left: -19em;
+    }
+  }
+
+  .small-man {
+    transform: rotateZ(326deg);
+    width: 7em;
+  }
+
+  #cancelBtn {
+    width: 1.5em;
+    position: absolute;
+    top: 6.5em;
+    left: -3em;
+    z-index: 40;
+    cursor: pointer;
+
+    @include breakpoints(mobile) {
+      left: -1em;
+    }
+  }
+
+  #scrollDBtn {
+    width: 1em;
+    position: absolute;
+    top: 9em;
+    left: -2.8em;
+    z-index: 40;
+    animation: moving-to-down 0.5s ease-in infinite alternate;
+
+    @include breakpoints(mobile) {
+      left: -0.8em;
+    }
+  }
+}
+
+@keyframes moving-to-down {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
 }
 
 .list {
@@ -23,14 +103,17 @@ body {
   height: 50vh;
   user-select: none;
   animation: moving-main 1s ease-in;
+
   @keyframes moving-main {
     0% {
       right: -5em;
     }
+
     100% {
       right: 0;
     }
   }
+
   .active-btn {
     background-color: #00323a;
   }
@@ -48,6 +131,7 @@ body {
     background-color: $gray-color-dark;
     animation: none;
   }
+
   @include breakpoints(small) {
     bottom: 0;
     top: auto;
@@ -60,6 +144,7 @@ body {
     justify-content: space-around;
     background-color: $gray-color-dark;
   }
+
   a {
     margin: 0.5em 0;
     width: 3em;
@@ -70,54 +155,68 @@ body {
     cursor: pointer;
   }
 }
+
 #homeBtn:hover {
   background-color: var(--hoverLightBtn, $main-color-dark);
+
   &::before {
     content: "home";
     @include sectionBtn;
   }
 }
+
 #aboutBtn:hover {
   background-color: var(--hoverLightBtn, $main-color-dark);
+
   &::before {
     content: "about";
     @include sectionBtn;
   }
 }
+
 #portfolioBtn:hover {
   background-color: var(--hoverLightBtn, $main-color-dark);
+
   &::before {
     content: "portfolio";
     @include sectionBtn;
   }
 }
+
 #contactBtn:hover {
   background-color: var(--hoverLightBtn, $main-color-dark);
+
   &::before {
     content: "contact";
     @include sectionBtn;
   }
 }
+
 #serviceBtn:hover {
   background-color: var(--hoverLightBtn, $main-color-dark);
+
   &::before {
     content: "services";
     @include sectionBtn;
+
     @include breakpoints(mobile) {
       top: -3em;
       left: -3.5em;
     }
+
     @include breakpoints(small) {
       top: -3em;
       left: -3.5em;
     }
   }
 }
+
 @keyframes moving {
   0% {
     transform: translateX(5em);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -137,27 +236,33 @@ body {
   right: 0;
   cursor: pointer;
   z-index: 5;
+
   &:hover {
     background-color: gray;
   }
+
   @include breakpoints(mobile) {
     top: 4%;
   }
 }
+
 #darkMode {
   display: none;
 }
+
 h1 {
   font-family: $big-text;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.5;
 }
+
 p {
   font-family: $small-text;
   line-height: 2.5;
   font-weight: 500;
 }
+
 button {
   display: flex;
   align-items: center;
@@ -180,6 +285,7 @@ button {
   position: relative;
   overflow: hidden;
   border: 1px solid $main-color-dark;
+
   &::after {
     content: "";
     width: 100%;
@@ -191,19 +297,23 @@ button {
     border-radius: 30px;
     transition: 0.5s;
   }
+
   &:hover {
     color: var(--textBtnLight, $text-color-dark);
+
     &::after {
       right: 0;
       z-index: -1;
     }
   }
+
   img {
     width: 3.5em;
     background-color: $main-color-dark;
     border-radius: 50%;
     padding: 0.5em;
   }
+
   a {
     width: 15em;
     height: 3.5em;
@@ -212,9 +322,11 @@ button {
     align-items: center;
     transition: 0.7s;
   }
+
   @include breakpoints(mobile) {
     margin: 0 auto;
   }
+
   @include breakpoints(small) {
     margin: 0 auto;
   }
@@ -251,6 +363,7 @@ span {
 .light-title {
   color: $text-color-light;
 }
+
 .light-title-span {
   color: $main-color-light;
 }
