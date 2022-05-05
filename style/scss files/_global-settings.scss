@@ -17,18 +17,18 @@ body {
 .hi {
   position: fixed;
   z-index: 50;
-  top: 33em;
+  top: 73vh;
   right: -3em;
   transition: 1s;
   transform: translateX(27em);
   display: none;
 
-  // @include breakpoints(mobile) {
-  //   top: 20em;
-  // }
+  @include breakpoints(mobile) {
+    top: 70vh;
+  }
 
   @include breakpoints(small) {
-    top: 23em;
+    top: 70vh;
   }
 
   &::after {
