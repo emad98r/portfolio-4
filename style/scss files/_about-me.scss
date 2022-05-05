@@ -46,11 +46,15 @@
 
         @keyframes moving-to-left {
           0% {
-            transform: translateX(-50em);
+            // transform: translateX(-50em);
+            position: relative;
+            left: -50em;
           }
 
           100% {
-            transform: translateX(0);
+            // transform: translateX(0);
+            position: relative;
+            left: 0;
           }
         }
 
@@ -140,11 +144,15 @@
 
         @keyframes moving-to-right {
           0% {
-            transform: translateX(50em);
+            // transform: translateX(50em);
+            position: relative;
+            right: 50em;
           }
 
           100% {
-            transform: translateX(0);
+            // transform: translateX(0);
+            position: relative;
+            right: 0;
           }
         }
 
