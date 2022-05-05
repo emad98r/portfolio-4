@@ -598,7 +598,7 @@ cancelBtn.addEventListener("click", () => {
 // ---------------------
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY >= document.querySelector(".projects").offsetTop - 200) {
+  if (window.scrollY >= document.querySelector(".projects").offsetTop - 500) {
     document.querySelectorAll(".project").forEach(e => {
       e.style.cssText = `transform: scale(1);`
     })
