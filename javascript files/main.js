@@ -574,27 +574,7 @@ window.addEventListener("scroll", () => {
   }
 })
 
-// small man Animation -----------------
 
-let hi = document.querySelector(".hi"),
-  cancelBtn = document.querySelector("#cancelBtn"),
-  scrollDBtn = document.querySelector("#scrollDBtn");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY >= 1000) {
-    hi.style.cssText = ` transform: translateX(0);display:block;`
-  }
-})
-
-
-cancelBtn.addEventListener("click", () => {
-  hi.style.cssText = `display:none;`
-  window.addEventListener("scroll", () => {
-    if (window.scrollY >= 1000) {
-      hi.style.cssText = `display:none; transform: translateX(0);`
-    }
-  })
-})
 // ---------------------
 
 window.addEventListener("scroll", () => {
